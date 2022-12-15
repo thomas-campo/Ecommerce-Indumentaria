@@ -40,14 +40,16 @@ const ItemListContainer = () => {
                                         {`${product.name} - ${product.categoria}`}
                                     </div>
                                     <div className="card-body text-center ">
-                                        <img src={product.imagen} alt='' className='w-50 img-fluid'/>
-                                        {product.price}                                                            
+                                        <img src={product.imagen} alt='' className='w-50 img-fluid'/>                                                          
                                     </div>
                             
-                                    { <div className="card-footer">                                                        
+                                    { <div className="card-footer text-center">                                                        
                                         <button className="btn btn-outline-primary btn-block">
                                             Ver mas
                                         </button>
+                                        <h6>
+                                        {`$${product.precio}`}
+                                        </h6>
                                     </div>}
                                 </div>
                             </Link>
