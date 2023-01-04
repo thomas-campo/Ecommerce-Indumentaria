@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import CartWidget from '../cartWidget/CartWidget'
 
 import './NavBar.css'
 
@@ -26,8 +27,8 @@ const NavBar = () => {
                         
                     </Nav>
                     <Nav>
-                        <Link>
-                            <img className='Carrito' src='https://thumbs.dreamstime.com/b/icono-de-carro-compra-bot%C3%B3n-circular-vector-plano-limpio-dise%C3%B1o-blanco-y-negro-ilustraci%C3%B3n-aislada-del-redondeo-concepto-167076849.jpg' alt='Carrito'/>
+                        <Link to="/carrito">
+                            <CartWidget/>
                         </ Link>
                     </Nav>
                     </Navbar.Collapse>
