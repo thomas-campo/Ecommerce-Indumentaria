@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { gFetch } from '../../components/FetchProductos/FetchProductos'
-
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import "./itemListContainer.css"
 
 const ItemListContainer = () => {
     const [ products, setProducts ] =   useState([])
@@ -10,58 +9,48 @@ const ItemListContainer = () => {
     const { categoriaId } = useParams()
     
     useEffect(() => {
-        if (categoriaId) {
-           const db = getFirestore()
-           const queryCollection = collection(db, 'productos')
-           const queryFiltrada = query(queryCollection, where( 'categoria' , '==' , categoriaId ))
-           getDocs(queryFiltrada)
-           .then(respuesta => setProducts( respuesta.docs.map(product => ( { id: product.id, ...product.data() } ) ) ))
-           .catch(err => console.log(err))
-           .finally(setLoading(false))
-        } else {
-            const db = getFirestore()
-            const queryCollection = collection(db, 'productos')
-            getDocs(queryCollection)
+        const db = getFirestore()
+
+        const queryCollection = collection(db, 'productos')
+
+        const queryFiltrada = categoriaId ? query(queryCollection, where( 'categoria' , '==' , categoriaId )) : queryCollection
+
+        getDocs(queryFiltrada)
             .then(respuesta => setProducts( respuesta.docs.map(product => ( { id: product.id, ...product.data() } ) ) ))
             .catch(err => console.log(err))
-            .finally(setLoading(false))
-        }
+            .finally( () => setLoading(false))
     },[categoriaId])
-    console.log(categoriaId)
 
   return (
     <>
+        <div>
+            <img className='imagenPromocion' src="https://qafacol.vteximg.com.br/arquivos/FAC-SALE-2022-1-mob.jpg?v=637897870742670000" alt="" />
+        </div>
         { loading ? 
             <h2>Cargando productos...</h2> 
                 :
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap'}} className="text-center">
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap'}} className="cardContainer">
                     {   products.map( product =>    
-                        <div            
-                            style={{ marginLeft: 10}}
-                            className='col-md-2'
-                            key={product.id}> 
+                        <div style={{ marginLeft: 10}} className='col-md-2' key={product.id}> 
 
-                            <Link to={`/detail/${product.id}`} >
-                                <div className="card mt-3">
-                                    <div className="card-header">
-                                        <h5>
-                                            {product.name} - {product.categoria}
-                                        </h5>
-                                    </div>
+                                <div className="cardProducto card mt-3">
                                     <div className="card-body text-center">
                                         <img src={product.imagen} alt='' className='w-50 img-fluid'/>
                                     </div>
-                            
-                                    { <div className="card-footer text-center">                                                        
-                                        <button className="btn btn-outline-primary btn-block">
-                                            Ver mas
-                                        </button>
-                                        <h5>
+                                    <div className=" card-footer text-center">
+                                        <h6 className='nombreProducto'>
+                                            {product.name}
+                                        </h6>
+                                        <p>
                                         {`$${product.precio}`}
-                                        </h5>
-                                    </div>}
+                                        </p>
+                                        <Link to={`/detail/${product.id}`} >
+                                            <button className="btn accordion btn-danger btn-block">
+                                                Ver mas
+                                            </button>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </Link>
                         </div>  
 ) }
                 </div>

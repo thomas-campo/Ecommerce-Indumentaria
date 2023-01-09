@@ -1,37 +1,42 @@
 import { Link, NavLink } from 'react-router-dom'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import CartWidget from '../cartWidget/CartWidget'
 
 import './NavBar.css'
 
-
+const categoriaList = [
+    {id:'frertfe', nombre:'Remeras', path:'remeras'},
+    {id:'eefjijei', nombre:'Pantalones', path:'pantalones'},
+    {id:'foskfokf', nombre:'Zapatillas', path:'zapatillas'}
+]
+ 
 const NavBar = () => {
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
-                    <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-warning' : 'btn btn-outline-warning'} to='/'>Ecommerce</NavLink>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-danger' : 'btn btn-outline-danger'} to="/categoria/remeras">
-                            Remeras
-                        </NavLink>
-                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-danger' : 'btn btn-outline-danger'} to="/categoria/pantalones">
-                            Pantalones
-                        </NavLink>
-                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-danger' : 'btn btn-outline-danger'} to="/categoria/zapatillas">
-                            Zapatillas
-                        </NavLink>
-                        
-                    </Nav>
+            <Navbar  className='containerNavBar navBar' collapseOnSelect expand="lg" bg="white" variant="w">
+                <Container className='container'>
+                    <Navbar.Toggle className='botonResponsivo' aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse className='containerNavBar' id="responsive-navbar-nav">
                     <Nav>
-                        <Link to="/carrito">
+                        { categoriaList.map( ( {id, nombre, path } ) =>
+                            <NavLink key={id} className='BotonNavBar' to={`/categoria/${path}`}>
+                            {`${nombre}`}
+                            </NavLink>
+                        )}
+                    </Nav>
+                    </Navbar.Collapse>
+                    <NavLink className='logoSitio' to='/'>
+                    <div>
+                        <p className='nombreSitio'>Ecco</p>
+                        <p className='letraNombre'>merce</p>
+                    </div>
+                    </NavLink>
+                    <Nav>
+                        <Link className='botonCarrito' to="/carrito">
                             <CartWidget/>
                         </ Link>
                     </Nav>
-                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>

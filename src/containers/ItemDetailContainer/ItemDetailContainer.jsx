@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { gFetch } from "../../components/FetchProductos/FetchProductos"
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const [ product , setProduct ] = useState({})
@@ -17,7 +17,9 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <ItemDetail product={product}/>
+            <div className="containerItemDetail ">
+                <ItemDetail product={product}/>
+            </div>
         </>
     )
 }

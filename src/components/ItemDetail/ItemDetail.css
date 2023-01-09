@@ -1,0 +1,27 @@
+.ContainerItemDetail{
+    align-items: center;
+}
+
+.imagenProductoItemDetail{
+    width: 350px;
+    margin: 5% 5%;
+}
+
+.descripcionProductoItemDetail{
+    background-clip: content-box;
+    margin: 10px 50px;
+}
+
+.descripcionProductoItemDetail h2, .descripcionProductoItemDetail h6, .descripcionProductoItemDetail h5{
+    margin: 0 0 20px 0;
+}
+
+.botonCount{
+    display: flex;
+    margin-top: 30px;
+}
+
+.botonVerCarrito{
+    margin: 0 30px;
+}
+

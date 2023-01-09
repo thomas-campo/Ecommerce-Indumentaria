@@ -1,7 +1,77 @@
-nav {
-    background-color: lightblue;
+/*media desktop*/
+@media screen and (min-width: 992px){
+
+    .containerNavBar{
+        padding: 10px 0;
+    }
+
+    .container .logoSitio{
+        position: absolute;
+    }
+
+    .BotonNavBar{
+        padding: 0px 20px 0px 20px;
+        
+    }
+
+
 }
 
-.Carrito{
-    width: 8%;
+/*media celular*/
+@media screen and (max-width: 991px ) {
+    .BotonNavBar{
+        margin: 0px 0 15px 0;
+        text-align: center;
+    }
+
+    .botonCarrito{
+        text-align: center;
+    }
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.navBar{
+    box-shadow: 0px 10px 20px;
+}
+
+.containerNavBar{
+    justify-content: space-around;
+}
+
+
+.logoSitio{
+    text-decoration: none;
+}
+
+.logoSitio div{
+    display: flex;
+}
+
+.nombreSitio, .letraNombre{
+    color: #161515ea;
+    font-size: x-large;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+
+.letraNombre{
+    color: #da291d;
+
+}
+
+.BotonNavBar{
+    text-decoration: none;
+    color: #161515ea;
+    font-weight: 700;
+}
+
+.BotonNavBar:hover{
+    color: #da291d;
+}
+
+.carrito{
+    width: 6%;
 }

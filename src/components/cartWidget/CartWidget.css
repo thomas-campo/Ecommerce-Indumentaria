@@ -1,0 +1,40 @@
+
+
+.divLogoCarrito{
+    position: relative;
+}
+
+.tamañoCantidadCarrito{
+    width: 20px;
+}
+
+.divCantidadCarrito{
+    max-width: max-content;
+    position: relative;
+    left: 22px;
+    bottom: 18px;
+    border-radius: 60%;
+    position: absolute;
+    font-size: xx-small;
+    background-color: #da291d;
+    color: #fff;
+}
+
+.cantidadCarrito{
+    margin: 0px 5px 1px 5px;
+}
+
+.carritoLogo{
+    color: #292828;
+}
+
+.carritoLogo:hover{
+    color: #292828d0;
+}
+
+@media screen and (min-width: 992px){
+    .cantidadCarrito{
+        left: 30px;
+        bottom: -1px;
+    }
+}

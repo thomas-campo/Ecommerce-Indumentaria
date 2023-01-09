@@ -1,0 +1,18 @@
+
+.cardContainer{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cardProducto{
+    max-width: 90%;
+}
+
+/*media celular*/
+@media screen and (max-width: 992px) {
+    .cardProducto{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
