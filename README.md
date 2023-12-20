@@ -1,6 +1,6 @@
 # Proyecto Final Ecommerce
 
-### Demo https://profound-dolphin-a86542.netlify.app/
+### Deploy https://profound-dolphin-a86542.netlify.app/
 
 ## Dependencias:
 - fortawesome: trae variedad de iconos/logos.
