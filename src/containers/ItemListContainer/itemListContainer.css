@@ -1,11 +1,25 @@
-
 .cardContainer{
+    display: flex;
     justify-content: center;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
+.cardItemListContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    width: 200px;
+    height: 250px;
+    border-radius: 5px;
+}
+
 .cardProducto{
-    max-width: 90%;
+}
+
+.containerItemListContainer{
+    margin-top: 80px;
 }
 
 /*media celular*/

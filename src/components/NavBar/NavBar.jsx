@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return (
         <>
-            <Navbar  className='containerNavBar navBar' collapseOnSelect expand="lg" bg="white" variant="w">
+            <Navbar  className='containerNavBar' collapseOnSelect expand="lg" bg="white" variant="w" fixed="top">
                 <Container className='container'>
                     <Navbar.Toggle className='botonResponsivo' aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className='containerNavBar' id="responsive-navbar-nav">

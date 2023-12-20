@@ -16,11 +16,11 @@ const ItemDetail = ({ product }) => {
 
   return ( 
     <>
-    <div className="ContainerItemDetail row">
-      <div className='col'>
+    <div className="ContainerItemDetail">
+      <div className="ItemDetail">
         <img className='imagenProductoItemDetail' src={product.imagen} alt="" />
       </div>
-      <div className="descripcionProductoItemDetail col">
+      <div className="descripcionProductoItemDetail">
         <h2>{product.name}</h2>
         <h5><b>Categoria: </b>{product.categoria}</h5>
         <h5><b>Precio: </b>${product.precio}</h5>

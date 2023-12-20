@@ -27,5 +27,9 @@
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "vite": "^3.2.3"
-  }
+  },
+  "description": "- fortawesome: trae variedad de iconos/logos.\r - bootstrap: ayuda con los estilos.\r - firebase: simula una base de datos.\r - formik: libreria que facilita hacer formularios.\r - react-bootstrap: nos da estilos como bootstrap.\r - react-router-dom: es una librería que nos facilita el uso de rutas de navegación.\r - react-dom: librería que renderiza los componentes de React para el navegador.",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }

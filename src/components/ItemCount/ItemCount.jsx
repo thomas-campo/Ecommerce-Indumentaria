@@ -13,11 +13,11 @@ export const ItemCount = ( { stock = 5, intial = 1 ,onAdd } ) => {
     const handleOnAdd = () => onAdd(count)
  
     return (
-        <center className="mt-5 p-3">
-            <button className="btn btn-danger m-2" onClick={sumar}>+</button>
+        <center className="itemCount">
+            <button className="btn btn-danger m-3" onClick={sumar}>+</button>
             <label htmlFor="">{count}</label>
-            <button className="btn btn-danger m-2 p" onClick={restar}>-</button>
-            <button className="btn btn-danger" onClick={handleOnAdd}>Agragar al Carrito</button>
+            <button className="rest btn btn-danger m-3" onClick={restar}>-</button>
+            <button className="btn btn-danger m-3" onClick={handleOnAdd}>Agragar al Carrito</button>
         </center>
     )
 }

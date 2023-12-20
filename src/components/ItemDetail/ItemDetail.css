@@ -1,5 +1,10 @@
 .ContainerItemDetail{
+    display: flex;
     align-items: center;
+}
+
+.ItemDetail{
+    width: min-content;
 }
 
 .imagenProductoItemDetail{
@@ -18,6 +23,7 @@
 
 .botonCount{
     display: flex;
+    justify-content: center;
     margin-top: 30px;
 }
 
@@ -25,3 +31,6 @@
     margin: 0 30px;
 }
 
+.rest{
+    width: 38px;
+}

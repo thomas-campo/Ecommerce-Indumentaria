@@ -23,38 +23,43 @@ const ItemListContainer = () => {
 
   return (
     <>
-        <div>
-            <img className='imagenPromocion' src="https://qafacol.vteximg.com.br/arquivos/FAC-SALE-2022-1-mob.jpg?v=637897870742670000" alt="" />
-        </div>
-        { loading ? 
-            <h2>Cargando productos...</h2> 
-                :
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap'}} className="cardContainer">
-                    {   products.map( product =>    
-                        <div style={{ marginLeft: 10}} className='col-md-2' key={product.id}> 
 
-                                <div className="cardProducto card mt-3">
-                                    <div className="card-body text-center">
-                                        <img src={product.imagen} alt='' className='w-50 img-fluid'/>
+        <div className='containerItemListContainer'>
+
+            <div>
+                <img className='imagenPromocion' src="https://qafacol.vteximg.com.br/arquivos/FAC-SALE-2022-1-mob.jpg?v=637897870742670000" alt="" />
+            </div>
+            { loading ? 
+                <h2>Cargando productos...</h2> 
+                    :
+                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap'}} className="cardContainer">
+                        {   products.map( product =>    
+                            <div style={{ marginLeft: 10}} className='cardItemListContainer' key={product.id}> 
+
+                                    <div className="cardProducto">
+                                        <div className="text-center">
+                                            <img src={product.imagen} alt='' className='w-50 img-fluid'/>
+                                        </div>
+                                        <div className=" card-footer text-center">
+                                            <h6 className='nombreProducto'>
+                                                {product.name}
+                                            </h6>
+                                            <p>
+                                            {`$${product.precio}`}
+                                            </p>
+                                            <Link to={`/detail/${product.id}`} >
+                                                <button className="btn accordion btn-danger btn-block">
+                                                    Ver mas
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className=" card-footer text-center">
-                                        <h6 className='nombreProducto'>
-                                            {product.name}
-                                        </h6>
-                                        <p>
-                                        {`$${product.precio}`}
-                                        </p>
-                                        <Link to={`/detail/${product.id}`} >
-                                            <button className="btn accordion btn-danger btn-block">
-                                                Ver mas
-                                            </button>
-                                        </Link>
-                                    </div>
-                                </div>
-                        </div>  
-) }
-                </div>
+                            </div>  
+                        )}
+                    </div>
             }
+
+        </div>
 
     </>
   )
