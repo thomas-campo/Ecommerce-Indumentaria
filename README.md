@@ -1,4 +1,4 @@
-# Proyecto Final Ecommerce
+# Proyecto Final React Js
 
 ### Deploy https://profound-dolphin-a86542.netlify.app/
 
